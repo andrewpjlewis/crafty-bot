@@ -11,6 +11,11 @@ import {
   EmbedBuilder
 } from 'discord.js';
 
+import express from "express";
+const app = express();
+app.get("/", (req, res) => res.send("Crafty Bot is alive!"));
+app.listen(3000, () => console.log("✅ Keep-alive server running on port 3000"));
+
 // --- Slash Command Definitions ---
 const commands = [
   new SlashCommandBuilder()
